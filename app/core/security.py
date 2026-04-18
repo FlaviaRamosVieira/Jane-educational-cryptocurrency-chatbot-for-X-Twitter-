@@ -1,2 +1,2 @@
-# --- CONFIGURAÇÕES DE SEGURANÇA FECHADAS ---
+# --- BLOCKED ---
 
