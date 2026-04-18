@@ -35,32 +35,23 @@ class XBotHandler:
                 user_id = str(tweet.author_id)
                 tweet_text = tweet.text
                 
-                print(f"📩 Nova mensagem de {user_id}: {tweet_text}")
+                print(f"📩 New messenger {user_id}: {tweet_text}")
 
-                # 1. Sanitização básica (Remover links, excessos)
                 clean_text = sanitize_input(tweet_text)
 
-                # 2. Processamento Seguro via Engine (Jailbreak + Memória + LLM)
-                # Aqui chamamos a função blindada que criamos no chain.py
                 response_text = run_bot_with_security(user_id, clean_text)
-
-                # 3. Postar a resposta no X
-                # O X exige o ID do tweet original para fazer um 'reply'
+                
                 self.x_client.create_tweet(
                     text=response_text, 
                     in_reply_to_tweet_id=tweet.id
                 )
-                print(f"🚀 Resposta enviada para {user_id}!")
+                print(f"🚀 Answer {user_id}!")
 
         except Exception as e:
-            print(f"❌ Erro ao processar menções: {e}")
+            print(f"❌ Error processing mentions: {e}")
 
     def start_polling(self, interval=60):
-        """
-        Inicia o loop de verificação de mensagens.
-        :param interval: Tempo em segundos entre cada verificação.
-        """
-        print(f"🤖 Bot Ativo! Verificando menções a cada {interval} segundos...")
+        print(f"🤖 Mentions every: {interval}")
         while True:
             self.check_mentions_and_reply()
             time.sleep(interval)
