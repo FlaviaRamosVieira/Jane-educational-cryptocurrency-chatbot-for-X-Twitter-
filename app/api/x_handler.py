@@ -13,9 +13,6 @@ class XBotHandler:
         self.my_user_id = self.x_client.get_me().data.id
 
     def check_mentions_and_reply(self):
-        """
-        Busca menções ao bot, filtra e responde usando a engine segura.
-        """
         print("🔍 Researching X...")
         
         try:
@@ -28,7 +25,7 @@ class XBotHandler:
             )
 
             if not tweets.data:
-                print("💤 Nenhuma menção nova.")
+                print("💤 No new mentions.")
                 return
 
             for tweet in tweets.data:
