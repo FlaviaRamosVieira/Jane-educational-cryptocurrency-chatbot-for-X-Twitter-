@@ -17,21 +17,19 @@ client = tweepy.Client(
 )
 
 def rodar_teste_unico():
-    print("🔍 Buscando a última menção...")
+    print("🔍 Looking for the last mention...")
     me = client.get_me().data.id
     mentions = client.get_users_mentions(id=me)
 
     if mentions.data:
         ultimo_tweet = mentions.data[0]
-        print(f"📩 Tweet encontrado: '{ultimo_tweet.text}'")
+        print(f"prompt blocked '{ultimo_tweet.text}'")
         
-        # A Jane pensa...
-        prompt = f"Responda com seu tom sassy e sarcástico de tutora de cripto/agronegócio: {ultimo_tweet.text}"
+        prompt = f"prompt blocked {ultimo_tweet.text}"
         response = model.generate_content(prompt)
         
-        print(f"🤖 Jane responde: {response.text}")
+        print(f"prompt blocked: {response.text}")
         
-        #Enviar resposta (Descomente a linha abaixo quando estiver pronto para postar de verdade!)
         client.create_tweet(text=response.text, in_reply_to_tweet_id=ultimo_tweet.id)
         print("✅ Resposta postada no X!")
     else:
