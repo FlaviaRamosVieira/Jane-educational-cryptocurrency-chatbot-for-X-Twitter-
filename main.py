@@ -11,8 +11,7 @@ def main():
         
         # Inicia o Handler do X
         bot = XBotHandler()
-        
-        # Começa a rodar o bot (checa menções a cada 60 segundos)
+    
         bot.start_polling(interval=60)
         
     except Exception as e:
