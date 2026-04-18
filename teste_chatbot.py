@@ -17,7 +17,7 @@ client = tweepy.Client(
 )
 
 def rodar_teste_unico():
-    print("🔍 Looking for the last mention...")
+    print("🔍 Researching...")
     me = client.get_me().data.id
     mentions = client.get_users_mentions(id=me)
 
@@ -33,7 +33,7 @@ def rodar_teste_unico():
         client.create_tweet(text=response.text, in_reply_to_tweet_id=ultimo_tweet.id)
         print("✅ Resposta postada no X!")
     else:
-        print("🤷 Nenhuma menção encontrada por enquanto.")
+        print("🤷 Nothing.")
 
 if __name__ == "__main__":
     rodar_teste_unico()
