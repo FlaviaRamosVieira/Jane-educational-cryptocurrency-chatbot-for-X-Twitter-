@@ -2,12 +2,12 @@
 from app import XBotHandler, validate_api_keys, settings
 
 def main():
-    print("--- INICIANDO CHATBOT JANE PROF CRIPTO ---")
+    print("--- STARTING ---")
     
     try:
         # Valida as chaves do .env
         validate_api_keys()
-        print("✅ Configurações validadas!")
+        print("✅ Validated Settings!")
         
         # Inicia o Handler do X
         bot = XBotHandler()
@@ -15,7 +15,7 @@ def main():
         bot.start_polling(interval=60)
         
     except Exception as e:
-        print(f"❌ Falha crítica na inicialização: {e}")
+        print(f"❌ FAIL: {e}")
 
 if __name__ == "__main__":
     main()
