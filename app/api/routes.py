@@ -1,0 +1,1 @@
+# Rotas da API (ex: /chat, /clear_memory)

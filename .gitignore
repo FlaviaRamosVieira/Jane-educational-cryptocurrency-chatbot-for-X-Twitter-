@@ -1,0 +1,58 @@
+# ==============================================================================
+# SEGURANÇA - NUNCA SUBIR ESTES ARQUIVOS (Cuidado Crítico!)
+# ==============================================================================
+.env
+*.json
+*.pem
+*.key
+# Bloqueia senhas, chaves de API e chaves de conta de serviço do Google
+
+# --- PROTEÇÃO ESPECÍFICA DO MODEL ARMOR ---
+model_armor*
+armor_config*
+security_policy*
+# Bloqueia qualquer arquivo que comece com esses nomes, caso você tenha criado backups locais
+
+# ==============================================================================
+# AMBIENTE PYTHON - Arquivos locais de instalação
+# ==============================================================================
+.venv/
+venv/
+ENV/
+env/
+bin/
+lib/
+include/
+pyvenv.cfg
+dist/
+build/
+*.egg-info/
+
+# ==============================================================================
+# CACHE E ARQUIVOS TEMPORÁRIOS - Lixo do Python
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# ==============================================================================
+# CONFIGURAÇÕES DE EDITOR - VS Code e PyCharm
+# ==============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================================================================
+# SISTEMA OPERACIONAL - Arquivos invisíveis do Windows/Mac
+# ==============================================================================
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# MODEL ARMOR - Segurança contra ataques de Jailbreak e comentários maliciosos
+# ==============================================================================
+engine/model.py
+core/security.py
