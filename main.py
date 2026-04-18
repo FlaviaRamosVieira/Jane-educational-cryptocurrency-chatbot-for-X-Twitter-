@@ -1,4 +1,3 @@
-# Note que agora importamos TUDO diretamente de 'app', sem precisar de 'app.api' ou 'app.core'
 from app import XBotHandler, validate_api_keys, settings
 
 def main():
