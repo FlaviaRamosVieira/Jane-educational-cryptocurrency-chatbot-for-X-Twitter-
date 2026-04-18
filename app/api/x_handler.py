@@ -16,7 +16,7 @@ class XBotHandler:
         """
         Busca menções ao bot, filtra e responde usando a engine segura.
         """
-        print("🔍 Verificando novas menções no X...")
+        print("🔍 Researching X...")
         
         try:
             # Busca menções recentes (filtramos para não responder a nós mesmos)
